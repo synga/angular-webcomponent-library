@@ -7,6 +7,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "serve": "ng serve presenting",
+    "build:presenting": "ng run presenting:build:production",
     "build:components": "cd projects/bundling && sh buildElements.sh",
     "test": "ng test"
   },

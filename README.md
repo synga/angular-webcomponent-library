@@ -6,23 +6,31 @@ A ideia desse workspace é criar uma biblioteca de WebComponents, projeto feito 
 
 Esse workspace contém alguns projetos, cada um com sua função especifica e uma finalidade.
 
-### Library
+### [Library](/projects/library/README.md)
 
 A biblioteca dos componentes em si. Um projeto apenas para criação dos componentes e expor eles para outras aplicações.
 
-### Presenting
+### [Presenting](/projects/presenting/README.md)
 
 Responsável por usar o so componentes para apresenta-los. Usado para server e aplicação em ambientes de QA/DEV e afins, porém não para produção.
 
-### Bundling
+### [Bundling](/projects/bundling/README.md)
 
 Responsável por fazer o build dos componentes para produção. É nela que teremos as classes necessárias para transformar os componentes em webcomponents, além de junção dos arquivos e disponbibilização dos arquivos finais para serem usados nas aplicaçãoes.
 
+## Comandos importantes
+
+`npm run serve`: Serve a aplicação dentro de `presenting` para que se possa testar os componentes.
+
+`npm run build:presenting`: Comando para fazer o build da aplicação de apresentação para ser usada para validação de QA e UAT.
+
+`npm run build:components`: Comando para fazer o build dos WebComponents.
+
 ## Proximos passos 
 
-*Documentação:*
+*Standalone Components:*
 
-Não é uma aplicação complexa, na verdade são aplicação ligeiramente simples para quem já tem algum conhecimento de Angular. Mas o bundling pode ser um pouco confuso dependendo do conhecimento que a pessoa tem de Node, pois existem algun scripts que fazem o build e junção de todos os componentes.
+Ver a possibilidade de fazer utilizando Standalone Components. Pode até ser possível, por exemplo, economizar um arquivo dentro de `bundling`, além de utilizar uma feature mais recente.
 
 *Bundling da biblioteca:*
 
