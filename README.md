@@ -1,27 +1,40 @@
-# VtrLibrary
+# Angular WebComponents Library
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.1.
+A ideia desse workspace é criar uma biblioteca de WebComponents, projeto feito como estudo para algo que estamos precisando atualmente no trabalho. Está ainda em seus primeiros passos e tenho algumas coisas para fazer, mas por hora já é o suficiente para ter um componente, uma aplicação para apresentação e uma para build.
 
-## Development server
+## Projetos no workspace
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Esse workspace contém alguns projetos, cada um com sua função especifica e uma finalidade.
 
-## Code scaffolding
+### Library
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+A biblioteca dos componentes em si. Um projeto apenas para criação dos componentes e expor eles para outras aplicações.
 
-## Build
+### Presenting
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Responsável por usar o so componentes para apresenta-los. Usado para server e aplicação em ambientes de QA/DEV e afins, porém não para produção.
 
-## Running unit tests
+### Bundling
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Responsável por fazer o build dos componentes para produção. É nela que teremos as classes necessárias para transformar os componentes em webcomponents, além de junção dos arquivos e disponbibilização dos arquivos finais para serem usados nas aplicaçãoes.
 
-## Running end-to-end tests
+## Proximos passos 
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+*Documentação:*
 
-## Further help
+Não é uma aplicação complexa, na verdade são aplicação ligeiramente simples para quem já tem algum conhecimento de Angular. Mas o bundling pode ser um pouco confuso dependendo do conhecimento que a pessoa tem de Node, pois existem algun scripts que fazem o build e junção de todos os componentes.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+*Bundling da biblioteca:*
+
+A ideia é ser uma biblioteca E ter componentes separados, pois caso um usuário queira usar apenas um componente, ele pode puxar apenas o script do componente que ele quer. Porém, da forma que está feito hoje, é feito um build separado de cada componente, e para ter um build da biblioteca como um todo, temos duas opções:
+
+- Um script que junta todos os componentes em um unico arquivo com exports deles.
+- Buildar toda a biblioteca em um unico arquivo.
+
+Estou mais inclinado a fazer da segunda forma, pois da primeira, cada arquivo tem os arquivos basicos do Angular necessários para fazer o componente funcionar, e sabemos que o Angular não é o Framework com melhor desempenho em questão de bundle, sendo assim, conforme crescem o numero de componentes, cresce exponencialmente a quantidade de arquivos basicos repetidos, pois todo componente tera esses arquivos.
+
+Fazer da segunda forma pode assegurar que vamos ter apenas uma copia dos componentes básicos do Angular necessários para que a biblioteca funcione (espero rsrsrs).
+
+*Limpeza do Bundling:*
+
+O projeto de Bundling é responsável apenas pelo build, porém ele é do tipo application e tem as configurações de application no angular.json. Não preciso de um app, de um main e nenhum arquivo que faça parte de uma aplicação Angular, porém preciso entender como fazer e excluir isso.

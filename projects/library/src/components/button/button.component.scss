@@ -1,0 +1,41 @@
+button {
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: .5rem 2rem;
+  border-radius: 8px;
+  cursor: pointer;
+
+  &.default {
+    background-color: lightgray;
+    color: #333;
+  }
+
+  &.clear {
+    background-color: white;
+    color: black;
+  }
+
+  &.dark {
+    background-color: #333;
+    color: white;
+  }
+
+  &.danger {
+    background-color: red;
+    color: white;
+  }
+
+  &.warning {
+    background-color: yellow;
+    color: black;
+  }
+
+  &:focus-visible {
+    outline: 2px solid lightblue;
+    outline-offset: 2px;
+  }
+
+  &:active {
+    outline: none;
+  }
+}
